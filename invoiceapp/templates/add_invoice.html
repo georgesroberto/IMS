@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block appcontent %}
+    <form method='POST' action=''>
+        {% csrf_token %}
+        <div class="row">
+            {% for field in form %}
+            <div class="col-sm-6">
+                {% bootstrap_field field %}
+            </div>
+            {% endfor %}
+            <input class="btn btn-success" type="submit" value='Save'/>
+        </div>
+    </form>
+
+{% endblock appcontent %}
