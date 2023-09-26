@@ -1,0 +1,26 @@
+body {
+	background-color: #e3dede;
+}
+
+.myClass{
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.table{
+	font-size: 13px;
+	text-align: center;
+	width: 95%;
+	margin: auto;
+	text-align: center;
+}
+
+/*Make alternating colors for the table rows*/
+.table tr:nth-child(odd){
+	background: #B8CAE4
+}
+
+.table tr:nth-child(even){
+	background: #dae5f4
+}
