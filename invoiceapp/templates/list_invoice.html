@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load bootstrap5 %}
+
+{%  block appcontent %}
+
+<form method='POST' action=''>
+	{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value='Search'/>
+</form>
+<br>
+
+<table class='table'>
+	<thead>
+	  <tr>
+		<th>COUNT</th>
+		<th>DATE</th>
+		<th>CUSTOMER NAME</th>
+		<th>INVOICE NUMBER</th>
+		<th>AMOUNT</th>
+	  </tr>
+	</thead>
+  {% for instance in queryset %}
+	  <tr>
+		<td>{{forloop.counter}}</td>
+		<td>{{instance.invoice_date}}</td>
+		<td>{{instance.name}}</td>
+		<td>{{instance.invoice_number}}</td>
+		<td>{{instance.total}}</td>
+		<td><a href="{% url 'update_invoice' instance.id %}">{{instance.name}}</a></td>
+	  </tr>
+  {% endfor %}
+</table>
+
+{% endblock appcontent %}
