@@ -1,5 +1,11 @@
-body {
-	background-color: #e3dede;
+body{
+	background-color: #e7e7e7!important;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-container{
+	width: 85%;
+	margin: auto;
 }
 
 .myClass{
@@ -23,4 +29,90 @@ body {
 
 .table tr:nth-child(even){
 	background: #dae5f4
+}
+
+.success{
+	list-style: none;
+	background-color: #2e6da4;
+	color: white;
+	box-shadow: 12px 12px 12px #e61c66;
+	text-align: center;
+}
+
+.myForm form{
+	box-shadow: 10px 10px 10px;
+	box-shadow: 12px 12px 12px #2e6da4;
+	border: 1px solid #2e6da4;
+	padding: 50px;
+	padding-bottom: 20px;
+}
+
+.mymenu-bar{
+    background-color: #e61c66;
+    color: white;
+    display: inline;
+    padding: 10px;
+    position: fixed;
+    height: 80%;
+    bottom: 70px;
+    left: -80px;
+    z-index: 3000;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.mymenu-bar:hover{
+    left: 0px;
+    -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+
+/*Table paination styling*/
+.paging-nav {
+	text-align: right;
+	padding-top: 2px;
+	font-size: 20px;
+	padding-bottom: 10px;
+  }
+  
+  .paging-nav a {
+	margin: auto 1px;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1px 7px;
+	background: #91b9e6;
+	color: white;
+	border-radius: 100px;
+  }
+  
+  .paging-nav .selected-page {
+	background: #187ed5;
+	font-weight: bold;
+  }
+  /* End Table paination styling*/
+
+
+  /*Scroll to top Styling*/
+.scrollToTop{
+	width:100px;
+	padding:10px;
+	text-align:center;
+	font-weight: bold;
+	text-decoration: none;
+	position:fixed;
+	bottom:10px;
+	right:20px;
+	display:none;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+	opacity: 0.3;
+}
+/* End Scroll to top Styling*/
+
+.form-check {
+	margin-top: 40px;
 }
