@@ -22,6 +22,8 @@ from invoiceapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('add_invoice/', add_invoice, name='add_invoice'),
-    path('list_invoice/', list_invoice, name='list_invoice'),
+    path('list/', list_invoice, name='list'),
+    path('add/', add_invoice, name='add'),
+    path('list/<str:pk>/', update_invoice, name='update'),
+    path('delete/<str:pk>/', delete_invoice, name='delete'),
 ]
