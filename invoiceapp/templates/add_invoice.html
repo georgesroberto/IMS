@@ -1,17 +1,53 @@
 {% extends 'base.html' %}
+
 {% load bootstrap5 %}
 
 {% block appcontent %}
-    <form method='POST' action=''>
-        {% csrf_token %}
-        <div class="row">
-            {% for field in form %}
-            <div class="col-sm-6">
-                {% bootstrap_field field %}
-            </div>
-            {% endfor %}
-            <input class="btn btn-success" type="submit" value='Save'/>
-        </div>
-    </form>
+    <div class="row">
+        <div class="col-9">
+            <form method='POST' action=''>
+                {% csrf_token %}
+                <div class="row">
+                    {% for field in form %}
+                    <div class="col-sm-6">
+                    {% bootstrap_field field %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </form>
 
+            <form method='POST' action=''>
+                {% csrf_token %}
+                <div class="row">
+                    {% for field in form_body %}
+                    <div class="col-sm-3">
+                    {% bootstrap_field field %}
+                    </div>
+                    {% endfor %}
+                </div><br>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="btn btn-success" type="submit" value='Save Invoice'/>
+                        <button id='more-line' type="button" class="btn btn-primary">Show | Hide More Lines</button><br><br><br>
+                    </div>
+                </div>                 
+            </form>
+        </div>
+
+        <div class="col-3">
+            <div class="recent text-center">
+                <span class="" style="font-size: larger; font-weight: bold;">Recent invoices</span>
+                <span class="" style="font-size: larger; font-weight: bold;">{{total_invoices}}</span>
+                <br><br>
+                {% for instance in queryset %}
+                    <div class="container" style="background-color: white;">
+                        <div class="">{{instance.name}}</div>
+                        <div class="">{{instance.invoice_date}}</div>
+                        <div class="">${{instance.total}}</div>
+                    </div><br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock appcontent %}
